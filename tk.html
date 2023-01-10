@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="hz" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css%22/%3E">
+    <style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600|Open+Sans:600&display=swap');
+
+body{
+    background-image: url(pc0004.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+.sidebar{
+  position: fixed;
+  width: 240px;
+  left: -240px;
+  height: 100%;
+  background: #311d1f;
+  transition: all .5s ease;
+}
+.sidebar header{
+  font-size: 28px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #311d1f;
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+}
+.sidebar a{
+  display: block;
+  height: 65px;
+  width: 100%;
+  color: white;
+  line-height: 65px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-left: 5px solid transparent;
+  font-family: 'Open Sans', sans-serif;
+  transition: all .5s ease;
+}
+a.active,a:hover{
+  border-left: 5px solid #fcf5a8;
+  color: #fcf5a8;
+}
+.sidebar a i{
+  font-size: 23px;
+  margin-right: 16px;
+}
+.sidebar a span{
+  letter-spacing: 1px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+#check{
+  display: none;
+}
+label #btn,label #cancel{
+  position: absolute;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid #311d1f;
+  margin: 15px 30px;
+  font-size: 29px;
+  background: #311d1f;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  line-height: 45px;
+  transition: all .5s ease;
+}
+label #cancel{
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+}
+#check:checked ~ label #btn{
+  margin-left: 245px;
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ label #cancel{
+  margin-left: 245px;
+  opacity: 1;
+  visibility: visible;
+}
+@media(max-width : 860px){
+  .sidebar{
+    height: auto;
+    width: 70px;
+    left: 0;
+    margin: 100px 0;
+  }
+  header,#btn,#cancel{
+    display: none;
+  }
+  span{
+    position: absolute;
+    margin-left: 23px;
+    opacity: 0;
+    visibility: hidden;
+
+  }
+  .sidebar a{
+    height: 60px;
+  }
+  .sidebar a i{
+    margin-left: -10px;
+  }
+  a:hover {
+    width: 200px;
+    background: inherit;
+  }
+  .sidebar a:hover span{
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.logo img{
+    width: 240px;
+    margin-right: 100px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  color: #d9d9d9;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.content1{
+  position: relative;
+  margin: 130px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+.content1 .text{
+  font-size: 2.5rem;
+  font-weight: 600;
+  color:  #311d1f;
+}
+.content1 .p{
+  font-size: 2.1875rem;
+  font-weight: 600;
+  color:  #311d1f;
+}
+footer{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background: #381e1e;
+}
+.main-content{
+  display: flex;
+}
+.main-content .box{
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+.box h2{
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.box .content{
+  margin: 20px 0 0 0;
+  position: relative;
+}
+.box .content:before{
+  position: absolute;
+  content: '';
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background:  #311d1f;
+}
+.box .content:after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 15%;
+  background: #fcf5a8;
+  top: -10px;
+}
+.left .content p{
+  text-align: justify;
+}
+.left .content .social{
+  margin: 20px 0 0 0;
+}
+.left .content .social a{
+  padding: 0 2px;
+}
+.left .content .social a span{
+  height: 40px;
+  width: 40px;
+  background: #381e1e;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.left .content .social a span:hover{
+  background: #fcf5a8;
+}
+.center .content .fas{
+  font-size: 1.4375rem;
+  background: #311d1f;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.center .content .fas:hover{
+  background: #fcf5a8;
+}
+.center .content .text{
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.center .content .phone{
+  margin: 15px 0;
+}
+.right form .text{
+  font-size: 1.0625rem;
+  margin-bottom: 2px;
+  color: #656565;
+}
+.right form .msg{
+  margin-top: 10px;
+}
+.right form input, .right form textarea{
+  width: 100%;
+  font-size: 1.0625rem;
+  background: #311d1f;
+  padding-left: 10px;
+  border: 1px solid #311d1f;
+}
+.right form input:focus,
+.right form textarea:focus{
+  outline-color: #3498db;
+}
+.right form input{
+  height: 35px;
+}
+.right form .btn{
+  margin-top: 10px;
+}
+.right form .btn button{
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #311d1f;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .3s;
+}
+.right form .btn button:hover{
+  background: #000;
+}
+.bottom center{
+  padding: 5px;
+  font-size: 0.9375rem;
+  background: #311d1f;
+}
+.bottom center span{
+  color: #656565;
+}
+.bottom center a{
+  color: #fcf5a8;
+  text-decoration: none;
+}
+.bottom center a:hover{
+  text-decoration: underline;
+}
+@media screen and (max-width: 900px) {
+  footer{
+    position: relative;
+    bottom: 0px;
+  }
+  .main-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .main-content .box{
+    margin: 5px 0;
+  }
+}
+
+.box p{
+  margin: 0;
+background-color: rgba(0, 0, 0, 0.418);
+  width: 1000px  ;
+  height: 1000px;
+  margin-left: 400px;
+}
+
+    </style>
+  </head>//
+  <body>
+    <input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+      <div class="logo">
+        <img src="logo150.png" alt="pg150">
+      </div>
+      <header>PG 150</header>
+      <a href="index.html" class="active">
+        <i class="fas fa-qrcode"></i>
+        <span>150</span>
+      </a>
+      <a href="tk.html" class="active">
+        <i class="fas fa-qrcode"></i>
+        <span>Tanítóképző</span>
+      </a>
+      <a href="tg.html">
+        <i class="fas fa-link"></i>
+        <span>Testnevelési Gimnázium</span>
+      </a>
+      <a href="pg.html">
+        <i class="fas fa-stream"></i>
+        <span>Petőfi Gimnázium</span>
+      </a>
+      <a href="gsz.html">
+         <i class="fas fa-calendar"></i>
+        <span>Gépészeti Gimnázium</span>
+      </a>
+      <a href="szb.html">
+        <i class="far fa-question-circle"></i>
+        <span>Szent Benedek 
+          Technikum</span>
+      </a>
+    </div>
+
+    <h1>VOLT EGYSZER EGY TANÍTÓKÉPZŐ…</h1>
+
+
+    <div class="box">
+      <p>„A régi idők eseményei történetté váltak.
+        Nemcsak története van azonban az intézetnek, hanem élete is, mely emberi sorsokból és elrendelésekből színes mozaik-képpé tevődik össze.<br>
+        A múltnak színes élményszerűen gazdag életét milyen halavány, fakó színben rekonstruálja az irattár avatag lapjairól előkerülő tényszerű adatok.<br>
+        A história fátyolt vet az elzúgott évek apró eseményeire, a diákélet pompázó kedélyvilágára…. Az emlékezés a diák-romantika délibábos képében tükrözteti a régi gondokat és a régi örömöket.<br> Az elcsendült kacagások, teli torkú prepanóták, az ifjú lélekben borongó szekundás szorongások, huncut kötődések, diák-álmok, diák-ábrándok, a szív első rezdülései vajjon hova tűntek, vajon hol maradtak
+        meg?<br>
+        <img src="ph_0003.jpg" alt="tanárok" width="1000" height="600">
+
+        Pedáns rendben sorakoznak a statisztikus előtt a nevek, az adatok, de hol dobog a szív, melynek érzelmei, hangulatai, vágyai szépítették meg a diákéletet?<br>
+        Óh ezek nem maradtak meg az intézet irattárában: ott élnek az emberekben, kiket idefűz az Emlék, vagy belehaltak, elporladtak a földbe, mely sírjával takar.
+        Mennyi sok név, mennyi sok adat, ami belefut egy száraz számjegybe s a lélek húrjain is csak egy számjegyet pendít meg.
+        Ha meg lehetne szólaltatni ezeket az adatokat?”<br>
+        Takács Béla tanár úr e bevezető gondolatokkal kezdte az 1928/29-es esztendő értesítőjét, az iskola 58. tanévében, az intézet új épületében töltött 25 éves jubileum jegyében.<br>
+        A régi idők eseményeit évszámokra, nevekre, adatok sokaságára fűzzük fel ma is, melyek mögött ott van a világ- és országtörténelem sorsfordító eseményeitől az egyéni életutak összekapcsolódásáig minden.<br>
+        Volt egyszer egy tanítóképző…, mely 86 tanévet élt meg, 2 város adott otthont számára, és 3 épületben végezte áldásos nevelői munkáját. Ez idő alatt 13 igazgató szolgálta és irányította az intézmény mindennapi működést; 96 tanár, 20 gazdasági tanár, 18 gyakorlóiskolai tanító, 18 nevelő és 54 hitoktató nevelte és tanította a jövő tanítóit. <br>Az oktató-nevelő munkát segítették az intézeti orvosok, iskolaszolgák, kertészek, gazdasszonyok. 86 esztendő alatt a tanítóképző intézet az oktatási reformoknak köszönhetően 12 fő képzési formaváltást hajtott végre. A 86 esztendő alatt 2154 tanítói oklevelet, valamint 24 gazdasági szaktanítói, 96 testnevelési szaktanítói oklevelet és 374 érettségi bizonyítványt adott át a sikeresen végzett növendékeknek.
+        86 esztendő alatt majd négy generáció nőtt fel, és a 86 esztendő alatt a világtörténelem kereke is nagyot fordult. Volt „boldog békeidő”, de árvíz és sok-sok járvány is, volt két világháború, őszirózsás forradalom, tanácsköztársaság, román megszállás, német megszállás után szovjet megszállás, majd népi demokrácia és 1956.<br>
+        Évszámok és statisztikai adatok sokasága, mely mögött ott van egy nagy múltú iskola<br>
+        mindennapi világa, a tanítói küldetésre való felkészítés, a gyakorlati életre és a helytállásra nevelés, a komoly oktató és nevelő munka melletti vidám és sokoldalú diákélet.<br>
+        Takács Béla tanár úr is arra törekedett több mint 90 évvel ezelőtt, hogy megszólaltassa a számok és adatok sokaságát, mint ahogy mi is erre törekszünk 2021-ben, nem feledve a 150 évvel ezelőtt alapított tanítóképző jelentőségét mind a tanárok, mind a diákok, mind a városunk, Kiskunfélegyháza életében.<br>
+        
+    </p>
+    </div>
+    
+    
+     
+    <footer>
+      <div class="main-content">
+        <div class="left box">
+          <h2>Rólunk</h2>
+          <div class="content">
+            <p1>wadawddawd</p1>
+            <div class="social">
+              <a href="https://facebook.com/coding.np%22%3E<span class="fab fa-facebook-f"></span></a>
+              <a href="#"><span class="fab fa-twitter"></span></a>
+              <a href="https://instagram.com/coding.np%22%3E<span class="fab fa-instagram"></span></a>
+              <a href="https://youtube.com/c/codingnepal%22%3E<span class="fab fa-youtube"></span></a>
+            </div>
+          </div>
+        </div>
+        <div class="center box">
+        <h2>Cím</h2>
+        <div class="content">
+          <div class="place">
+            <span class="fas fa-map-marker-alt"></span>
+            <span class="text">6100 Kiskunfélegyháza, Kossuth u. 24.</span>
+          </div>
+          <div class="phone">
+            <span class="fas fa-phone-alt"></span>
+            <span class="text">+36 76 462 332</span>
+          </div>
+          <div class="email">
+            <span class="fas fa-envelope"></span>
+            <span class="text">titkarsag@szbi-pg.hu</span>
+          </div>
+        </div>
+      </div>
+      <div class="right box">
+        <h2>Kapcsolatfelvétel</h2>
+        <div class="content">
+          <form action="#">
+            <div class="email">
+              <div class="text">Email </div>
+              <input type="email" required>
+            </div>
+            <div class="msg">
+              <div class="text">Üzenet</div>
+              <textarea rows="2" cols="25" required></textarea>
+            </div>
+            <div class="btn">
+              <button type="submit">Küldés</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <center>
+        <span class="credit"></span>
+        <span class="far fa-copyright"></span><span> 2022 paledvin75 & dűvid</span>
+      </center>
+    </div>
+  </footer>
+</body>
+</html>
